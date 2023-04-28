@@ -4,8 +4,8 @@ const { findUsers, findUserById, createUser, updateUser, deleteUser, addFriend, 
 
 router.route('/').get(findUsers).post(createUser); //Find all users and create user routes
 
-router.route('/:id').get(findUserById).put(updateUser).delete(deleteUser); //Find by ID, update user (by ID), and delete user (by ID)
+router.route('/:id').get(findUserById).put(updateUser).delete(deleteUser); //Find user by ID, update user (by ID), and delete user (by ID)
 
-router.route('/:userId/friends/:friendId').post(addFriend).delete(removeFriend); //Add and delete friendZ (by ID)
+router.route('/:userId/friends/:friendId').post(addFriend).delete(removeFriend); //Add and delete friends (by ID)
 
 module.exports = router; //Exporting router

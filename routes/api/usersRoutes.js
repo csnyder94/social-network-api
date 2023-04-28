@@ -1,3 +1,11 @@
-const router = require('express').Router();
+const router = require('express').Router(); //Importing Router
 
-module.exports = router;
+const { findUsers, findUserById, createUser, updateUser, deleteUser, addFriend, removeFriend } = require('../../controllers/userController'); //Require userController for functions
+
+router.route('/').get(findUsers).post(createUser); //Find all users and create user routes
+
+router.route('/:id').get(findUserById).put(updateUser).delete(deleteUser); //Find by ID, update user (by ID), and delete user (by ID)
+
+router.route('/:userId/friends/:friendId').post(addFriend).delete(removeFriend); //Add and delete friendZ (by ID)
+
+module.exports = router; //Exporting router

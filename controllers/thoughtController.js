@@ -12,7 +12,7 @@ const thoughtController = {
     findThought({ params }, res) { //Find thought by ID
         Thought.findOne({ _id: params.id }) //Using ID param
             .then((ThoughtData) => {
-                if (ThoughtData) {
+                if (!ThoughtData) {
                     res.status(404).json({ message: 'No thought found with this id!' });
                     return;
                 }

@@ -2,9 +2,13 @@ const router = require('express').Router(); //Importing express router
 
 const { getAllThoughts, findThought, createThought, updateThought, deleteThought, addReaction, removeReaction } = require('../../controllers/thoughtController'); //Importing functions
 
-router.route('/').get(getAllThoughts).post(createThought); //Get all thoughts and create thought route
+router.route('/').get(getAllThoughts) //Get all thoughts and create thought route
 
-router.route('/:thoughtId').get(findThought).put(updateThought).delete(deleteThought);  //Find thought by ID, update thought (by ID), and delete thought (by ID)
+router.route('/:userId').post(createThought);
+
+router.route('/:id').get(findThought).put(updateThought);
+
+router.route('/:userId/:thoughtId').delete(deleteThought);
 
 router.route('/:thoughtId/reactions').post(addReaction); //Create reaction to thought by ID
 

@@ -30,8 +30,6 @@ To use this application on your local machine: clone the repository, install dep
 npm start
 ```
 You will also need Insomnia to make HTTP requests.           
-For a video walkthrough using the application, go to the following link: https://drive.google.com/file/d/1Y-MZpfSL_KLd4ODP5gVyPayj5w5Kz218/view
-
 
 ## Support
 
